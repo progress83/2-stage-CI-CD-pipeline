@@ -1,0 +1,30 @@
+version: 0.2
+ 
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - echo === INSTALL YOUR PACKAGES HERE!!! ===   
+    
+  pre_build:
+    commands:
+      - echo === CHECKING IF PYTHON WAS INSTALLED ===
+      - python3 --version
+      - echo === CHECKING FOR AMAZON VERSION ===
+      - aws --version
+    
+  build:
+    commands:
+      - echo === BUILD APP HERE ===
+      - python3 my_app.py
+    
+  post_build:
+    commands:
+      - echo === WHAT TO DO WHEN BUILD IS COMPLETE ===
+      - echo Build completed at 'date'...
+    
+artifacts:
+  files:
+    - '**/*'
+   

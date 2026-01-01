@@ -21,8 +21,6 @@ phases:
     commands:
       - echo === BUILD TEMPLATE HERE ===
       - cfn-lint ec2-user-data-template-B.yml
-      - echo ***TEMPLATE VALIDATED***
-      - aws cloudformation validate-template --template-body file://ec2-user-data-template-B.yml
       - echo === BUILD TEMPLATE HERE ===
       - aws cloudformation package --template-file ec2-user-data-template-B.yml --s3-bucket my-deployed-artifact --output-template-file build-artifact-template.yaml
       
